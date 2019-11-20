@@ -5,7 +5,7 @@ name = "variables1"
 path = "exercises/variables/variables1.rs"
 mode = "compile"
 hint = """
-Hint: The declaration on line 5 is missing a keyword that is needed in Rust
+Hint: The declaration on line 12 is missing a keyword that is needed in Rust
 to create a new variable binding."""
 
 [[exercises]]
@@ -15,7 +15,7 @@ mode = "compile"
 hint = """
 The compiler message is saying that Rust cannot infer the type that the
 variable binding `x` has with what is given here.
-What happens if you annotate line 5 with a type annotation?
+What happens if you annotate line 7 with a type annotation?
 What if you give x a value?
 What if you do both?
 What type should x be, anyway?
@@ -36,7 +36,7 @@ path = "exercises/variables/variables4.rs"
 mode = "compile"
 hint = """
 Oops! In this exercise, we have a variable binding that we've created on
-line 5, and we're trying to use it on line 6, but we haven't given it a
+line 7, and we're trying to use it on line 8, but we haven't given it a
 value. We can't print out something that isn't there; try giving x a value!
 This is an error that can cause bugs that's very easy to make in any
 programming language -- thankfully the Rust compiler has caught this for us!"""
@@ -90,7 +90,7 @@ name = "functions4"
 path = "exercises/functions/functions4.rs"
 mode = "compile"
 hint = """
-The error message points to line 12 and says it expects a type after the
+The error message points to line 14 and says it expects a type after the
 `->`. This is where the function's return type should be-- take a look at
 the `is_even` function for an example!"""
 
@@ -152,8 +152,8 @@ https://doc.rust-lang.org/book/ch04-03-slices.html
 and use the starting and ending indices of the items in the Array
 that you want to end up in the slice.
 
-If you're curious why the right hand of the `==` comparison does not
-have an ampersand for a reference since the left hand side is a
+If you're curious why the first argument of `assert_eq!` does not
+have an ampersand for a reference since the second argument is a
 reference, take a look at the Deref coercions section of the book:
 https://doc.rust-lang.org/book/ch15-02-deref.html"""
 
@@ -214,7 +214,7 @@ mode = "compile"
 hint = """
 Yes, it would be really easy to fix this by just changing the value bound to `word` to be a
 string slice instead of a `String`, wouldn't it?? There is a way to add one character to line
-6, though, that will coerce the `String` into a string slice."""
+9, though, that will coerce the `String` into a string slice."""
 
 # TEST 2
 
@@ -365,8 +365,8 @@ name = "move_semantics1"
 path = "exercises/move_semantics/move_semantics1.rs"
 mode = "compile"
 hint = """
-So you've got the "cannot borrow immutable local variable `vec1` as mutable" error on line 11,
-right? The fix for this is going to be adding one keyword, and the addition is NOT on line 11
+So you've got the "cannot borrow immutable local variable `vec1` as mutable" error on line 13,
+right? The fix for this is going to be adding one keyword, and the addition is NOT on line 13
 where the error is."""
 
 [[exercises]]
@@ -375,8 +375,8 @@ path = "exercises/move_semantics/move_semantics2.rs"
 mode = "compile"
 hint = """
 So `vec0` is being *moved* into the function `fill_vec` when we call it on
-line 7, which means it gets dropped at the end of `fill_vec`, which means we
-can't use `vec0` again on line 10 (or anywhere else in `main` after the
+line 10, which means it gets dropped at the end of `fill_vec`, which means we
+can't use `vec0` again on line 13 (or anywhere else in `main` after the
 `fill_vec` call for that matter). We could fix this in a few ways, try them
 all!
 1. Make another, separate version of the data that's in `vec0` and pass that
